@@ -43,11 +43,11 @@
 
         @livewireScripts
         <script>
-            Livewire.on('alert', function(message,titulo){
+            Livewire.on('alert', function(titulo,message,type){
                 Swal.fire(
                     titulo,
                     message,
-                    'success'
+                    type
                 )
             });
         </script>

@@ -69,7 +69,7 @@
                             <img src="{{ $p->imagen }}"> 
                         </td>
                         <td class="px-6 py-4">
-                            <a class="text-white" href="#">Eliminar</a>
+                            <livewire:delete-post :wire:key="$p->id" :post="$p" />
                             <a class="text-white" href="#">Modificar</a>
                         </td>
                     </tr>
