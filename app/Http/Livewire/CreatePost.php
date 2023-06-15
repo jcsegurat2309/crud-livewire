@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -35,11 +37,15 @@ class CreatePost extends Component
         $this->validate();
         //Sin comprimir img
         //$url = Storage::disk('publico')->put('post',$this->imagen);
-        $url = '';
+        //usando intervention image
+        $nombre = Str::slug($this->title,'-').'.'.$this->imagen->getClientOriginalExtension();
+        $ruta = public_path('post/'.$nombre);
+        $image = Image::make($this->imagen->getRealPath());
+        $image->save($ruta,50);
         Post::create([
             'title'=>$this->title,
             'content' => $this->content,
-            'imagen' => $url
+            'imagen' => '/post'.'/'.$nombre
         ]);
         $this->id_imagen = rand();
         $this->reset(['modal','title','content']);

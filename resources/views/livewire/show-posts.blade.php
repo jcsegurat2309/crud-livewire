@@ -66,7 +66,7 @@
                             {{ $p->content }}
                         </td>
                         <td  class="px-6 py-4 object-cover w-32 h-auto">
-                            <img src="/{{ $p->imagen }}"> 
+                            <img src="{{ $p->imagen }}"> 
                         </td>
                         <td class="px-6 py-4">
                             <a class="text-white" href="#">Eliminar</a>
