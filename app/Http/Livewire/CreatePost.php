@@ -48,7 +48,7 @@ class CreatePost extends Component
             'imagen' => '/post'.'/'.$nombre
         ]);
         $this->id_imagen = rand();
-        $this->reset(['modal','title','content']);
+        $this->reset(['modal','title','content','imagen']);
         $this->emit('alert','Registro creado con Exito!','Crear post');
         $this->emitTo('show-posts','render');
     }
