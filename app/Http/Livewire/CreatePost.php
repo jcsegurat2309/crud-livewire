@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Post;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use Livewire\Component;
@@ -21,6 +20,11 @@ class CreatePost extends Component
         'content' => 'required|max:255|min:20',
         'imagen' => 'required|max:3056|mimes:jpg,png,svg'
     ];
+
+    public function cancelar(){
+        $this->reset(['imagen','title','content','modal']);
+        $this->id_imagen = rand();
+    }
 
     public function updated($propertyName){
         $this->validateOnly($propertyName);

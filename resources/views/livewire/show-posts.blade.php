@@ -70,7 +70,7 @@
                         </td>
                         <td class="px-6 py-4">
                             <livewire:delete-post :wire:key="$p->id" :post="$p" />
-                            <a class="text-white" href="#">Modificar</a>
+                            <livewire:edit-post :wire:ke="$p->id" :post="$p" />
                         </td>
                     </tr>
                 @endforeach

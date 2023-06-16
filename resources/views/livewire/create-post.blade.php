@@ -51,7 +51,7 @@
             <div wire:loading wire:target="crear">
                     <p class="text-xs font-bold text-white mt-2 mr-2">Cargando...</p>
             </div>
-            <x-secondary-button class="mr-2" wire:click="$set('modal',false)">
+            <x-secondary-button class="mr-2" wire:click="cancelar">
                 Cancelar
             </x-secondary-button>
             <x-danger-button wire:click="crear" wire:loading.attr="disabled" wire:target="crear,imagen" class="disabled:opacity-25" >
