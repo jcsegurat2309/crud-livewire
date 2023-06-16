@@ -43,7 +43,7 @@ class EditPost extends Component
         $this->validate();
         if($this->imagen){
             $this->validate([
-                'imagen' => 'max:3072|mimes:JPG,PNG'
+                'imagen' => 'max:3072|mimes:png,jpg',
             ]);
             if(Storage::disk('publico')->exists($this->post->imagen)){
                 Storage::disk('publico')->delete($this->post->imagen);
