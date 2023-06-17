@@ -54,15 +54,13 @@ class EditPost extends Component
                 $this->post->imagen = 'post/'.$nombre;
             
             }else{
-                $this->emit('alert','Actualizar post','Archivo inexistente por favor, contacta a soporte técnico','error');
+                $this->emit('button','Actualizar post','Archivo inexistente por favor, contacta a soporte técnico','error');
             }
         }
-
         $this->post->save();
         $this->id_imagen = rand();
         $this->reset(['edit','imagen']);
         $this->emit('alert','Actualizar Post','Actualización con Exito!','success');
-        $this->emitTo('show-posts','render');
     }
 
 }

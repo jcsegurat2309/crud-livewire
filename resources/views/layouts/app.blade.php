@@ -43,12 +43,27 @@
 
         @livewireScripts
         <script>
-            Livewire.on('alert', function(titulo,message,type){
+            Livewire.on('button', function(titulo,message,type){
                 Swal.fire(
                     titulo,
                     message,
                     type
                 )
+            });
+        </script>
+        <script>
+            Livewire.on('alert', function(titulo,message,type){
+                Swal.fire({
+                    position: 'center',
+                    icon: type,
+                    title: titulo,
+                    text:message,
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
             });
         </script>
     </body>

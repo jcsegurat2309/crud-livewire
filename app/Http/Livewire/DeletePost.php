@@ -22,7 +22,7 @@ class DeletePost extends Component
             $this->post->delete();
             Storage::disk('publico')->delete($this->post->imagen);
             $this->reset('delete');
-            $this->emitTo('show-posts','render');
+            $this->emit('alert','Post Elimnado','Post eliminado con exito!','success');
         }else{
             $this->emit('alert','Archivo no encontrado!','Ponte en contacto con soporte tecnico...','error');
         }

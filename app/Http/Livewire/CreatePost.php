@@ -54,6 +54,5 @@ class CreatePost extends Component
         $this->id_imagen = rand();
         $this->reset(['modal','title','content','imagen']);
         $this->emit('alert','Crear post','Registro creado con Exito!','success');
-        $this->emitTo('show-posts','render');
     }
 }
